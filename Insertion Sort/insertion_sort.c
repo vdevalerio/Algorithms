@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "helper_functions.c"
 
 int main()
 {
@@ -16,17 +15,8 @@ int main()
         elements[j] = elements[j + 1];
         elements[j + 1] = temp;
       }
-
-      for(int i = 0; i < (sizeof(elements)) / sizeof(elements[0]); i++)
-      {
-        printf("%d, ", elements[i]);
-      }
-
-      printf("\n");
     }
   }
-
-
 
   return 0;
 }
