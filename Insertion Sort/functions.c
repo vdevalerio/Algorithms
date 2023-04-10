@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "functions.h"
 
 void insertion_sort(int array[], int length)
