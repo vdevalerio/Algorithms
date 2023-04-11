@@ -1,15 +1,31 @@
 #include "functions.h"
 
-void insertion_sort(int array[], int length)
+void insertion_sort(int array[], int length, int nondecreasing)
 {
-	for(int i = 1, j; i < length; i++)
+	if(nondecreasing)
 	{
-		int key = array[i];
-		j = i - 1;
-		for(; j >= 0 && array[j] > key; j--)
+		for(int i = 1, j; i < length; i++)
 		{
-			array[j + 1] = array[j];
+			int key = array[i];
+			j = i - 1;
+			for(; j >= 0 && array[j] > key; j--)
+			{
+				array[j + 1] = array[j];
+			}
+			array[j + 1] = key;
 		}
-		array[j + 1] = key;
+	}
+	else
+	{
+		for(int i = 1, j; i < length; i++)
+		{
+			int key = array[i];
+			j = i - 1;
+			for(; j >= 0 && array[j] < key; j--)
+			{
+				array[j + 1] = array[j];
+			}
+			array[j + 1] = key;
+		}
 	}
 }
